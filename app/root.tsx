@@ -9,6 +9,8 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import { PageTransition } from "./components/primitives/PageTransition";
+import { AnimatedOutlet } from "./components/primitives/AnimatedOutlet";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -29,7 +31,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <PageTransition>
+      <AnimatedOutlet />
+    </PageTransition>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

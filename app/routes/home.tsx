@@ -1,3 +1,4 @@
+import { ButtonOne } from "~/components/elements/ButtonOne";
 import type { Route } from "./+types/home";
 
 export function loader() {
@@ -7,13 +8,8 @@ export function loader() {
 export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <div className="text-center p-4">
-      <h1 className="text-2xl">Hello, {loaderData.name}</h1>
-      <a
-        className="block mt-2 text-blue-500 underline hover:text-blue-600"
-        href="https://reactrouter.com/docs"
-      >
-        React Router Docs
-      </a>
+      <h1 className="text-2xl">Hello, React Router</h1>
+      <ButtonOne to="/page-two">Page Two</ButtonOne>
     </div>
   );
 }
